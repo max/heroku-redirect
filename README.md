@@ -8,15 +8,15 @@ A simple Rack app to redirect from one app to another on
 ```bash
 $ git clone git@github.com:max/heroku-redirect.git
 $ bundle install
-$ foreman start
 $ echo "REDIRECT_TO=http://example.com" >> .env
+$ foreman start
 $ curl http://localhost:5000
 ````
 
 ## Running Tests
 
 ```bash
-$ foreman run bundle exec ruby test/web_test.rb
+$ bundle exec ruby test/web_test.rb
 ```
 
 ## Deploying to Heroku

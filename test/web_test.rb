@@ -9,10 +9,15 @@ class RedirectTest < MiniTest::Unit::TestCase
     RedirectTo
   end
 
+  def setup
+    ENV['REDIRECT_TO'] = 'http://example.com/'
+  end
+
   def test_redirect
     get '/'
+
     assert_equal(302, last_response.status)
-    assert_equal(ENV['REDIRECT_TO'],
+    assert_equal("http://example.com/",
                  last_response.headers['Location'])
   end
 
